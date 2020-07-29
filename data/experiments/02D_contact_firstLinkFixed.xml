@@ -18,7 +18,7 @@
     <se3min config="6  +1.0 -5.0 -0.0 -3.141593 -1.57 -3.141593"/>
     <se3max config="6  +2.5 +1.0 +0.0 +3.141593 +1.57 +3.141593"/>
     <epsilongoalregion>0.05</epsilongoalregion>
-    <maxplanningtime>5</maxplanningtime>      <!-- runtime in (s) -->
+    <maxplanningtime>30</maxplanningtime>      <!-- runtime in (s) -->
     <smoothPath>0</smoothPath>                  <!-- 0: no smoothing, 1: smoothing      -->
     <pathSpeed>15</pathSpeed>
     <pathWidth>0.2</pathWidth>
@@ -28,7 +28,7 @@
     <algorithm name="ompl:rrt"/>
     <algorithm name="ompl:prm"/>
     <algorithm name="ompl:lazyprm"/>
-    <!--<algorithm name="benchmark:contact"/> -->
+    <algorithm name="benchmark:contact"/>
 
     <contacts>
       <contact robot_name="2dof" robot_link="jlink0"
