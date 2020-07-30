@@ -12,10 +12,10 @@
     <qinit config="59  0 3 1.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.55 0 0 0 0 0 0 1.57 0 0 0 0 0 0 0 1.57 0 0 0 0 0 0 1.57 0 0 0 0 0 0 0 1.57 0 0 0 0 0 0 1.57 0 0 0 "/>
     <qgoal config="59  0 -3 1.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.55 0 0 0 0 0 0 1.57 0 0 0 0 0 0 0 1.57 0 0 0 0 0 0 1.57 0 0 0 0 0 0 0 1.57 0 0 0 0 0 0 1.57 0 0 0 "/>
 
-    <se3min config="6  -5 -5 -5 -3.141593 -1.57 -3.141593"/>
-    <se3max config="6  +5 +5 +5 +3.141593 +1.57 +3.141593"/>
+    <se3min config="6  -5 -5 -5 -3.141593 -3.141593 -3.141593"/>
+    <se3max config="6  +5 +5 +5 +3.141593 +3.141593 +3.141593"/>
     <epsilongoalregion>0.1</epsilongoalregion>
-    <maxplanningtime>2</maxplanningtime>      <!-- runtime in (s) --> 
+    <maxplanningtime>200</maxplanningtime>      <!-- runtime in (s) -->
     <freeFloating>1</freeFloating>
 
     <algorithm name="ompl:prmstar"/>

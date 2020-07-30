@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<world>
+
+  <robot name="7dof" file="../../robots/planar_manipulator/7dof_manip_no_endeffector_contact.urdf" translation="0 0 0" rotateRPY="0 0 0"/>
+
+  <terrain name="the_sphere" file="../../terrains/primitives/sphere.tri" translation="+0 +0 0" scale="20 20 20"/>
+
+  <plannerinput>
+
+    <qinit  config="20  -10.0 +0.0 +0.0 0.0 0.0 0.0  +1.4 0 -0.2 0 -0.2 0 -0.2 0 -0.2 0 -0.2 0 -0.2 0 "/>
+    <qgoal  config="20  +5.0 +5.0 +7.0 -1.0 0.0 0.75  -0.3 0 0 0 0 0 -0.2 0 -0.2 0 -0.2 0 -0.2 0 "/>
+    <se3min config="6  -12.0 -12.0 -12.0 -3.141593 -3.141593 -3.141593"/>
+    <se3max config="6  +12.0 +12.0 +12.0 +3.141593 +3.141593 +3.141593"/>
+    <epsilongoalregion>0.1</epsilongoalregion>
+    <maxplanningtime>15</maxplanningtime>      <!-- runtime in (s) -->
+    <pathSpeed>50</pathSpeed>
+    <smoothPath>0</smoothPath>
+    <freeFloating>1</freeFloating>
+
+    <algorithm name="ompl:rrtconnect"/>
+    <algorithm name="ompl:rrt"/>
+    <algorithm name="ompl:prm"/>
+    <algorithm name="ompl:lazyprm"/>
+
+    <contacts>
+      <contact robot_name="7dof" robot_link="jlink7"
+               mode="fixed"
+               mesh="the_sphere"/>
+      <contact robot_name="7dof" robot_link="jlink0"
+               mode="fixed"
+               mesh="the_sphere"/>
+    </contacts>
+
+    <hierarchy>
+      <level inner_index="0" type="R3_CONTACT"/>
+    </hierarchy>
+
+  </plannerinput>
+
+</world>
+
+
+
