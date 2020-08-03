@@ -6,12 +6,12 @@
 
   <terrain name="cylinderBottom" file="../../terrains/primitives/cylinder.tri" translation="0.0 0 0" rotateRPY="0 1.570796 0"/>
   <terrain name="cylinderTopLeft" file="../../terrains/primitives/cylinder.tri" translation="-6.0 -8.5 -0" rotateRPY="0 1.570796 0"/>
-  <terrain name="cylinderTopRight" file="../../terrains/primitives/cylinder.tri" translation="-7.0 +8.5 +0" rotateRPY="0 1.570796 0"/>
+  <terrain name="cylinderTopRight" file="../../terrains/primitives/cylinder.tri" translation="-6.0 +8.5 +0" rotateRPY="0 1.570796 0"/>
 
   <plannerinput>
 
     <qinit  config="20  -6.15 -8.5 +0 0.0 0.0 0.0  +0.77 0 -0.77 0 -0.77 0 -0.77 0 +0.5 0 +0.5 0 -0.35 0 "/>
-    <qgoal  config="20  -6.85 +8.5 +0 0.0 0.0 0.0  -1.57 0 -1.57 0 -0.4 0 +0.77 0 +0.65 0 +0 0 +0 0 "/>
+    <qgoal  config="20  -6.15 +8.5 +0 0.0 0.0 0.0  +2.37 0 +0.77 0 +0.77 0 +0.77 0 -0.5 0 -0.5 0 +0.35 0 "/>
     <se3min config="6  -9.0 -10.0 -0.0 -3.141593 -3.141593 -3.141593"/>
     <se3max config="6  -4.5 +10.0 +0.0 +3.141593 +3.141593 +3.141593"/>
     <epsilongoalregion>0.1</epsilongoalregion>
@@ -20,7 +20,6 @@
     <smoothPath>0</smoothPath>
     <freeFloating>1</freeFloating>
 
-    <algorithm name="benchmark:contact"/>
     <algorithm name="ompl:rrtconnect"/>
     <algorithm name="ompl:rrt"/>
     <algorithm name="ompl:prm"/>

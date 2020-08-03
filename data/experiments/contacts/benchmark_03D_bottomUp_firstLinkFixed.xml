@@ -10,12 +10,12 @@
 
   <plannerinput>
 
-    <qinit  config="12  +2 -3 -0.5 0.0 0.0 0.0  1.570796 0.0 1.570796 0 1.570796"/>
-    <qgoal  config="12  -2.0 +1.75 +0.5 +0.0 0.0 0.0  -2.75 0.0 0.5 0 0.25"/>
-    <se3min config="6  -2.5 -3.5 -1.0 -3.141593 -3.141593 -3.141593"/>
-    <se3max config="6  +2.5 +2.25 +1.0 +3.141593 +3.141593 +3.141593"/>
+    <qinit  config="12  +2.0 -5.0 -0.5 0.0 0.0 0.0  1.570796 0.0 -1.570796 0 -1.570796"/>
+    <qgoal  config="12  +2.0 -1.0 +0.5 0.0 0.0 0.0  1.570796 0.0 -0.55 0 -0.65"/>
+    <se3min config="6  +1.5 -5.5 -1.0 -3.141593 -3.141593 -3.141593"/>
+    <se3max config="6  +2.5 +1.0 +1.0 +3.141593 +3.141593 +3.141593"/>
     <epsilongoalregion>0.05</epsilongoalregion>
-    <maxplanningtime>60</maxplanningtime>       <!-- runtime in (s) -->
+    <maxplanningtime>10</maxplanningtime>      <!-- runtime in (s) -->
     <smoothPath>0</smoothPath>                  <!-- 0: no smoothing, 1: smoothing      -->
     <pathSpeed>15</pathSpeed>
     <pathWidth>0.2</pathWidth>
@@ -28,11 +28,11 @@
     <algorithm name="ompl:lazyprm"/>
 
     <contacts>
-      <contact robot_name="3dof" robot_link="jlink0"
+      <contact robot_name="3dof" robot_link="jlink3"
                mode="transition"
                meshFrom="rectangleBottom"
                meshTo="rectangleTop"/>
-      <contact robot_name="3dof" robot_link="jlink3"
+      <contact robot_name="3dof" robot_link="jlink0"
                mode="fixed"
                mesh="rectangleBottom"/>
     </contacts>
@@ -44,6 +44,3 @@
   </plannerinput>
 
 </world>
-
-
-

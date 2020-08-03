@@ -6,18 +6,18 @@
     <algorithm name="ompl:kpiece"/>
     <!-- <algorithm name="ompl:prm"/> -->
     <!-- <algorithm name="ompl:est"/> -->
-    <maxplanningtime>3</maxplanningtime> <!-- runtime in (s) --> 
+    <maxplanningtime>3</maxplanningtime> <!-- runtime in (s) -->
     <runcount>5</runcount> <!-- number of runs per algorithm --> 
     <maxmemory>10000</maxmemory> <!-- max memory (MB) --> 
   </benchmark>
 
   <benchmark name="contact">
-    <!-- <algorithm name="ompl:rrt"/> -->
     <algorithm name="ompl:rrtconnect"/>
-    <algorithm name="ompl:prm"/>
-    <!-- <algorithm name="ompl:lazyprm"/> -->
-    <maxplanningtime>5</maxplanningtime> <!-- runtime in (s) -->
-    <runcount>5</runcount> <!-- number of runs per algorithm -->
+    <algorithm name="ompl:prmstar"/>
+    <algorithm name="ompl:bfmt"/>
+
+    <maxplanningtime>20</maxplanningtime> <!-- runtime in (s) -->
+    <runcount>2</runcount> <!-- number of runs per algorithm -->
     <maxmemory>100000</maxmemory> <!-- max memory (MB) --> 
   </benchmark>
 
