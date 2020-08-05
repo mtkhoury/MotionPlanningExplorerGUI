@@ -20,10 +20,6 @@
     <pathWidth>0.1</pathWidth>
 
     <algorithm name="benchmark:contact"/>
-    <algorithm name="ompl:informedrrtstar"/>
-    <algorithm name="ompl:sorrtstar"/>
-    <algorithm name="ompl:stride"/>
-
 
     <contacts>
       <contact robot_name="3dof" robot_link="jlink3"

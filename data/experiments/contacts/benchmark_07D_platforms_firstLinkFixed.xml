@@ -22,15 +22,6 @@
 
     <algorithm name="benchmark:contact"/>
 
-    <algorithm name="ompl:informedrrtstar"/>
-    <algorithm name="ompl:sorrtstar"/>
-    <algorithm name="ompl:bitstar"/>
-    <algorithm name="ompl:abitstar"/>
-    <algorithm name="ompl:stride"/>
-    <algorithm name="ompl:projest"/>
-    <algorithm name="ompl:pdst"/>
-
-
     <contacts>
       <contact robot_name="7dof" robot_link="jlink0"
                mode="fixed"

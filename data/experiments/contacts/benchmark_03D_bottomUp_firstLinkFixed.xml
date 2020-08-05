@@ -22,10 +22,6 @@
     <freeFloating>1</freeFloating>
 
     <algorithm name="benchmark:contact"/>
-    <algorithm name="ompl:rrtconnect"/>
-    <algorithm name="ompl:rrt"/>
-    <algorithm name="ompl:prm"/>
-    <algorithm name="ompl:lazyprm"/>
 
     <contacts>
       <contact robot_name="3dof" robot_link="jlink3"
