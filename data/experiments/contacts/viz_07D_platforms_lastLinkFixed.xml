@@ -4,18 +4,18 @@
 
   <robot name="7dof" file="../../robots/planar_manipulator/7dof_manip_no_endeffector_contact.urdf" translation="0 0 0" rotateRPY="0 0 0"/>
 
-  <terrain name="cylinderBottom" file="../../terrains/primitives/cylinder.tri" translation="0.0 0 0" rotateRPY="0 1.570796 0"/>
-  <terrain name="cylinderTopLeft" file="../../terrains/primitives/cylinder.tri" translation="-6.0 -8.5 -0" rotateRPY="0 1.570796 0"/>
-  <terrain name="cylinderTopRight" file="../../terrains/primitives/cylinder.tri" translation="-6.0 +8.5 +0" rotateRPY="0 1.570796 0"/>
+  <terrain name="cylinderBottom" file="../../terrains/primitives/rectangle.tri" translation="0.0 0 0" rotateRPY="0 0 0"/>
+  <terrain name="cylinderTopLeft" file="../../terrains/primitives/rectangle.tri" translation="-6.0 -8.5 -0" rotateRPY="0 0 0"/>
+  <terrain name="cylinderTopRight" file="../../terrains/primitives/rectangle.tri" translation="-6.0 +8.5 +0" rotateRPY="0 0 0"/>
 
   <plannerinput>
 
-    <qinit  config="20  -6.15 -8.5 +0 0.0 0.0 0.0  +0.77 0 -0.77 0 -0.77 0 -0.77 0 +0.5 0 +0.5 0 -0.35 0 "/>
-    <qgoal  config="20  -6.15 +8.5 +0 0.0 0.0 0.0  +2.37 0 +0.77 0 +0.77 0 +0.77 0 -0.5 0 -0.5 0 +0.35 0 "/>
-    <se3min config="6  -9.0 -10.0 -0.0 -3.141593 -3.141593 -3.141593"/>
-    <se3max config="6  -4.5 +10.0 +0.0 +3.141593 +3.141593 +3.141593"/>
+    <qinit  config="20  -6.15 -8.75 +0 0.0 0.0 0.0  +0.77 0 -0.77 0 -0.77 0 -0.77 0 +0.5 0 +0.5 0 -0.35 0 "/>
+    <qgoal  config="20  -6.15 +8.75 +0 0.0 0.0 0.0  +2.37 0 +0.77 0 +0.77 0 +0.77 0 -0.5 0 -0.5 0 +0.35 0 "/>
+    <se3min config="6  -12.0 -10.0 -0.0 -3.141593 -3.141593 -3.141593"/>
+    <se3max config="6  -5.5 +10.0 +0.0 +3.141593 +3.141593 +3.141593"/>
     <epsilongoalregion>0.1</epsilongoalregion>
-    <maxplanningtime>150</maxplanningtime>      <!-- runtime in (s) -->
+    <maxplanningtime>20</maxplanningtime>      <!-- runtime in (s) -->
     <pathSpeed>15</pathSpeed>
     <smoothPath>0</smoothPath>
     <freeFloating>1</freeFloating>
@@ -23,13 +23,11 @@
     <algorithm name="ompl:rrtconnect"/>
     <algorithm name="ompl:rrt"/>
     <algorithm name="ompl:prm"/>
-    <algorithm name="ompl:lazyprm"/>
 
     <contacts>
       <contact robot_name="7dof" robot_link="jlink7"
                mode="fixed"
-               mesh="cylinderBottom"
-               tri="3"/>
+               mesh="cylinderBottom"/>
       <contact robot_name="7dof" robot_link="jlink0"
                mode="transition"
                meshFrom="cylinderTopLeft"

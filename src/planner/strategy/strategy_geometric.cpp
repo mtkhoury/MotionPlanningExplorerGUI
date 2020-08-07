@@ -62,14 +62,14 @@ namespace om = ompl::multilevel;
 namespace og = ompl::geometric;
 namespace ob = ompl::base;
 
+
 static ob::OptimizationObjectivePtr GetOptimizationObjective(const ob::SpaceInformationPtr& si)
 {
-  ob::OptimizationObjectivePtr lengthObj(new ob::PathLengthOptimizationObjective(si));
-  ob::OptimizationObjectivePtr clearObj(new ob::MaximizeMinClearanceObjective(si));
-  ob::MultiOptimizationObjective* opt = new ob::MultiOptimizationObjective(si);
-  opt->addObjective(lengthObj, 1.0);
-  // opt->addObjective(clearObj, 1.0);
-  return ob::OptimizationObjectivePtr(opt);
+    ob::OptimizationObjectivePtr lengthObj(new ob::PathLengthOptimizationObjective(si));
+
+    lengthObj->setCostThreshold(ob::Cost(std::numeric_limits<double>::infinity()));
+
+    return ob::OptimizationObjectivePtr(lengthObj);
 }
 
 static uint all_runs{0};
@@ -408,7 +408,7 @@ void StrategyGeometricMultiLevel::RunBenchmark(const StrategyInput& input)
   ss.getStateSpace()->registerProjections();
   ss.setup();
 
-  pdef->setOptimizationObjective( GetOptimizationObjective(si) );
+  ss.getProblemDefinition()->setOptimizationObjective( GetOptimizationObjective(si) );
 
   ot::Benchmark::Request req;
   req.maxTime = binput.maxPlanningTime;

@@ -4,9 +4,9 @@
 
   <robot name="7dof" file="../../robots/planar_manipulator/7dof_manip_no_endeffector_contact.urdf" translation="0 0 0" rotateRPY="0 0 0"/>
 
-  <terrain name="cylinderBottom" file="../../terrains/primitives/cylinder.tri" translation="0 0 0" rotateRPY="0 1.570796 0"/>
-  <terrain name="cylinderTopLeft" file="../../terrains/primitives/cylinder.tri" translation="-6.0 -8.5 0" rotateRPY="0 1.570796 0"/>
-  <terrain name="cylinderTopRight" file="../../terrains/primitives/cylinder.tri" translation="-6.0 +8.5 0" rotateRPY="0 1.570796 0"/>
+  <terrain name="cylinderBottom" file="../../terrains/primitives/rectangle.tri" translation="0.0 0 0" rotateRPY="0 0 0"/>
+  <terrain name="cylinderTopLeft" file="../../terrains/primitives/rectangle.tri" translation="-6.0 -8.5 -0" rotateRPY="0 0 0"/>
+  <terrain name="cylinderTopRight" file="../../terrains/primitives/rectangle.tri" translation="-6.0 +8.5 +0" rotateRPY="0 0 0"/>
 
   <plannerinput>
 
@@ -21,12 +21,14 @@
     <freeFloating>1</freeFloating>
 
     <algorithm name="benchmark:contact"/>
+    <algorithm name="ompl:rrtconnect"/>
+    <algorithm name="ompl:rrt"/>
+    <algorithm name="ompl:prm"/>
 
     <contacts>
       <contact robot_name="7dof" robot_link="jlink0"
                mode="fixed"
-               mesh="cylinderBottom"
-               tri="3"/>
+               mesh="cylinderBottom"/>
       <contact robot_name="7dof" robot_link="jlink7"
                mode="transition"
                meshFrom="cylinderTopLeft"
